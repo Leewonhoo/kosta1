@@ -1,0 +1,6 @@
+127.0.0.1 - - [10/Oct/2017:10:28:04 +0900] "GET / HTTP/1.1" 404 1070
+0:0:0:0:0:0:0:1 - - [10/Oct/2017:10:28:05 +0900] "GET /FlyPeanut/WEB-INF/classes/work/model/dao/FactoryDao.java HTTP/1.1" 404 1047
+0:0:0:0:0:0:0:1 - - [10/Oct/2017:10:28:05 +0900] "GET /favicon.ico HTTP/1.1" 404 1081
+0:0:0:0:0:0:0:1 - - [10/Oct/2017:10:28:18 +0900] "GET /FlyPeanut/Reservation.jsp HTTP/1.1" 200 7455
+0:0:0:0:0:0:0:1 - - [10/Oct/2017:10:28:19 +0900] "GET /FlyPeanut/css/MainStyle.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [10/Oct/2017:10:28:19 +0900] "GET /FlyPeanut/images/LOGO.jpg HTTP/1.1" 304 -

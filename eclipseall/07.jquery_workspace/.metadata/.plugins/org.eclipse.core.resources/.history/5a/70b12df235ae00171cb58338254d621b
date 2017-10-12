@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Hello Ajax version 1</title>
+
+<style type='text/css'>
+* { font-family: Tahoma, Arial, sans-serif; }
+#helloTitle{ color: #48f; font-size: 1.5em; }
+</style>
+
+<script type='text/javascript' src='prototype.js'></script>
+<script type='text/javascript'>
+	/*	윈도우 브라우저 후 자동 호출되는 이벤트 처리
+		function(){실행 구현부} - 익명함수, 구현과 동시에 호출 하라는 의미
+	*/
+	window.onload=function(){
+	 	document.getElementById('helloBtn').onclick=function(){	//helloBtn id값을 보유한 버튼 클릭시 자동 실행되는 익명 함수
+	  
+		   	var name=document.getElementById('helloTxt').value;	//helloTxt에 client가 입력한 데이타 획득-> name변수에 대입
+		   	//alert(name);	//단순 경고창 출력
+		   	//------------ client가 입력한 데이타 획득 -> 다음 로직은 서버의 특정 프로그램 요청+데이타 전송+응답
+		   
+		   // prototype.js(툴킷)을 활용한 비동기 통신용 요청 객체
+		   // new Ajax.Request(url, {method:http요청방식, onComplete:callback함수})
+			new Ajax.Request("hello1.jsp?name="+encodeURI(name),	//첫번째 인자 - url[?쿼리스트링]
+		     									{ //두번째 인자
+		       										method:"get",		//요청 방식
+		       										onComplete:function(xhr){	 //응답이 200번대 즉 정상 응답시에 자동 실행되는 함수 지정 속성
+														document.getElementById('helloTitle').innerHTML=xhr.responseText;	//응답된 데이타를 특정 위치에 대입
+		       										}
+		     									}
+		  									 );
+		 }
+	
+	}//end of 익명함수
+
+/* 
+서버단 개발자 고려사항
+1.  client가 입력한 데이타 획득
+    (name=value 형식으로 전송됨, 획득 getPrarmeter("name속성명");
+2. 로직에 맞는 응답 데이타 조합해서 출력
+*/
+
+
+</script>
+</head>
+<body>
+<h1 id='helloTitle'>Hello, stranger</h1>
+<p>Please introduce yourself by entering your name in the box below</p>
+<input type='text' size='24' id='helloTxt'></input>&nbsp;<button id='helloBtn'>Submit</button>
+</body>
+</html>

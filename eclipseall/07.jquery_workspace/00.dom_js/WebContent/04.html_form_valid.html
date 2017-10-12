@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+
+<script>
+	window.onload = function() {document.forms["myForm"]["name"].focus();}
+	
+    function validateForm(){
+        var x=document.forms["myForm"]["name"].value;
+        if (x==null || x==""){
+            alert("이름을 넣어 주세요");
+            document.forms["myForm"]["name"].focus();
+            return false;
+        }
+        
+        var x=document.forms["myForm"]["email"].value;
+        var atpos=x.indexOf("@");
+        var dotpos=x.lastIndexOf(".");
+        if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){
+            alert("Not a valid e-mail address");
+            document.forms["myForm"]["email"].focus();
+            return false;
+        }
+        
+        if (!myFunction()) {
+        	document.forms["myForm"]["age"].value = "";
+        	document.forms["myForm"]["age"].focus();
+        	return false;
+        }
+    }
+    
+    function myFunction(){
+        try{ 
+            var x = document.getElementById("age").value;
+            if(x == "")  throw "empty";
+            if(isNaN(x)) throw "not a number";
+            if(x>16) throw "too high";
+            if(x<7)  throw "too low";
+        }catch(err){
+            var y=document.getElementById("errorMessageArea");
+            y.style.color = "red";
+            y.innerHTML="Error: " + err + ".";
+            return false;
+        }
+        
+        return true;
+    }
+
+</script>
+
+</head>
+<body>
+<form name="myForm" action="#" 
+	  onsubmit="return validateForm()" method="post">
+이름: <input type="text" name="name"><br>
+이메일: <input type="text" name="email"><br>
+나이: <input type="text" name="age" id="age"><p>
+<div id="errorMessageArea"></div>
+<input type="submit" value="확인">
+</form>
+
+</body>
+</html>

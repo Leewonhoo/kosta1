@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+I:\ho\eclipseall\teamweb\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+848863407.index
+4082949425.index
+2138034753.index
+2318527009.index
+1642400528.index
+3213772110.index

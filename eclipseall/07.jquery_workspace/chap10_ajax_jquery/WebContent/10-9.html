@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>JQuery Examples</title>
+        <style type="text/css" >
+			.hover { background-color: #00f; color: #fff; }
+			.page{ margin:5px; }
+		</style>
+        <script src="script/jquery-1.7.1.js" type="text/javascript"></script>  
+        <script type="text/javascript">
+			$(document).ready(function() {  
+				$.ajax({
+					type:"POST",
+					url:"getstudrec.jsp", 
+					success:function(html) {
+						$('#message').html(html);
+						
+						var rows=$('table').find('tbody tr').length;
+						var no_rec_per_page=5;
+						var no_pages=Math.ceil(rows/no_rec_per_page);
+						var $pagenumbers=$('<div id="pages"></div>');
+						
+						for(i=0;i<no_pages;i++) {
+							$('<span class="page">'+(i+1)+'</span>').appendTo($pagenumbers);
+						}   
+						
+						$pagenumbers.insertBefore('table');
+						$('.page').hover(function(){
+							$(this).addClass('hover');
+							}, function(){
+							$(this).removeClass('hover');
+						});
+
+						$('table').find('tbody tr').hide();
+						var tr=$('table tbody tr');
+						for(var i=0;i<=no_rec_per_page-1;i++) {
+							$(tr[i]).show();
+						}
+
+						$('span').click(function(event){
+							$('table').find('tbody tr').hide();
+							for(i=($(this).text()-1)*no_rec_per_page;i<=$(this).text()*no_rec_per_page-1;i++){
+								$(tr[i]).show();
+							}
+						});
+					}
+				});
+			});
+		</script>
+  </head>
+<body>
+<div id="message"></div>
+</body>

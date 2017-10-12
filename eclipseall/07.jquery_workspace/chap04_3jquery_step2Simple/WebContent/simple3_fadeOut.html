@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="script/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#test").click(function(){
+  	$(this).fadeOut(1000);		//test id의 tag에 click발생시 서서히 소멸시키는 함수
+  	//$("p").css("background-color", "red");
+  	$("p").css({"background-color":"red", "font-size":"150%"});
+  });
+});
+</script>
+</head>
+
+<body>
+<div id="test" style="background:yellow;width:200px">클릭해 보세요!</div>
+<p>"클릭해 보세요" 문구 클릭시 서서히 사라집니다</p>
+</body>
+
+</html>

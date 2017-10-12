@@ -1,0 +1,13 @@
+a.normal {
+	text-decolation:none;
+	font-size:12px;
+}
+
+input.input-readonly {
+	readOnly:true;
+	background-color:#c0c0c0;
+}
+
+.txt-error {
+	color:#ff0000;
+}

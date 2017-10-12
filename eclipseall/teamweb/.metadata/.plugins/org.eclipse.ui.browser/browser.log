@@ -1,0 +1,185 @@
+
+9월 25, 2017 02:46:54.28 NEW SESSION
+9월 25, 2017 02:46:54.28 [9640:8944:0925/024654.283:ERROR:cache_util_win.cc(20)] Unable to move the cache: 5
+9월 25, 2017 02:46:54.28 [9640:8944:0925/024654.283:ERROR:cache_util.cc(134)] Unable to move cache folder C:\Users\kosta\AppData\Local\Google\Chrome\User Data\ShaderCache\GPUCache to C:\Users\kosta\AppData\Local\Google\Chrome\User Data\ShaderCache\old_GPUCache_000
+9월 25, 2017 02:46:54.28 [9640:8944:0925/024654.283:ERROR:disk_cache.cc(132)] Unable to create cache
+9월 25, 2017 02:46:54.28 [9640:8944:0925/024654.283:ERROR:shader_disk_cache.cc(604)] Shader Cache Creation failed: -2
+9월 25, 2017 03:25:08.79 
+9월 25, 2017 03:25:08.79 KLIB_SelfTest return : KLR_OK
+9월 25, 2017 03:28:45.57 
+9월 25, 2017 03:28:45.57 KLIB_SelfTest return : KLR_OK
+
+9월 25, 2017 17:21:41.12 NEW SESSION
+9월 25, 2017 17:21:41.14 
+9월 25, 2017 17:21:41.15 KLIB_SelfTest return : KLR_OK
+9월 25, 2017 17:22:08.32 
+9월 25, 2017 17:22:08.32 KLIB_SelfTest return : KLR_OK
+9월 25, 2017 17:23:04.71 [5788:9864:0925/172304.719:ERROR:cache_util_win.cc(20)] Unable to move the cache: 5
+9월 25, 2017 17:23:04.71 [5788:9864:0925/172304.719:ERROR:cache_util.cc(134)] Unable to move cache folder C:\Users\kosta\AppData\Local\Google\Chrome\User Data\ShaderCache\GPUCache to C:\Users\kosta\AppData\Local\Google\Chrome\User Data\ShaderCache\old_GPUCache_000
+9월 25, 2017 17:23:04.71 [5788:9864:0925/172304.719:ERROR:disk_cache.cc(132)] Unable to create cache
+9월 25, 2017 17:23:04.73 [5788:9864:0925/172304.719:ERROR:shader_disk_cache.cc(604)] Shader Cache Creation failed: -2
+9월 25, 2017 17:23:37.67 
+9월 25, 2017 17:23:37.67 KLIB_SelfTest return : KLR_OK
+9월 25, 2017 17:24:04.71 
+9월 25, 2017 17:24:04.71 KLIB_SelfTest return : KLR_OK
+9월 25, 2017 17:25:12.25 
+9월 25, 2017 17:25:12.25 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 24:16:59.02 
+9월 26, 2017 24:16:59.05 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 24:17:40.97 
+9월 26, 2017 24:17:40.97 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 24:19:01.80 
+9월 26, 2017 24:19:01.81 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 24:25:15.58 
+9월 26, 2017 24:25:15.59 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 24:25:44.97 
+9월 26, 2017 24:25:44.97 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 01:29:28.81 
+9월 26, 2017 01:29:28.81 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 01:39:49.06 
+9월 26, 2017 01:39:49.06 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 01:42:48.06 
+9월 26, 2017 01:42:48.07 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 01:44:14.34 
+9월 26, 2017 01:44:14.34 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 01:47:14.95 
+9월 26, 2017 01:47:14.95 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 01:51:37.32 [6716:8420:0926/015137.295:ERROR:service_manager_context.cc(174)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\60.0.3112.113\content_browser.service.exe
+9월 26, 2017 01:51:37.32 [6716:8420:0926/015137.296:ERROR:service_manager_context.cc(174)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\60.0.3112.113\content_browser.service.exe
+9월 26, 2017 01:51:37.32 [6716:8420:0926/015137.296:ERROR:service_manager_context.cc(174)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\60.0.3112.113\content_browser.service.exe
+9월 26, 2017 01:51:37.32 [6716:8420:0926/015137.297:ERROR:service_manager_context.cc(174)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\60.0.3112.113\content_browser.service.exe
+9월 26, 2017 01:51:37.32 [6716:8420:0926/015137.297:ERROR:service_manager_context.cc(174)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\60.0.3112.113\content_browser.service.exe
+9월 26, 2017 01:51:37.32 [6716:8420:0926/015137.297:ERROR:service_manager_context.cc(174)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\60.0.3112.113\content_browser.service.exe
+9월 26, 2017 01:51:37.32 [6716:8420:0926/015137.297:ERROR:service_manager_context.cc(174)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\60.0.3112.113\content_browser.service.exe
+9월 26, 2017 01:51:37.33 
+9월 26, 2017 01:51:37.33 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 01:53:05.84 
+9월 26, 2017 01:53:05.84 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 01:56:05.07 
+9월 26, 2017 01:56:05.07 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 03:15:17.99 
+9월 26, 2017 03:15:18.06 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 03:19:19.76 
+9월 26, 2017 03:19:19.76 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 03:21:35.70 
+9월 26, 2017 03:21:35.70 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 03:31:44.50 
+9월 26, 2017 03:31:46.11 KLIB_SelfTest return : KLR_OK
+
+9월 26, 2017 12:15:32.28 NEW SESSION
+9월 26, 2017 12:15:32.28 
+9월 26, 2017 12:15:32.30 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 15:13:34.58 
+9월 26, 2017 15:13:34.60 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 15:16:26.33 
+9월 26, 2017 15:16:26.38 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 15:17:12.62 
+9월 26, 2017 15:17:12.62 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 15:18:15.22 
+9월 26, 2017 15:18:15.22 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 15:24:44.20 
+9월 26, 2017 15:24:44.20 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 18:39:47.81 
+9월 26, 2017 18:39:47.84 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 19:30:00.78 
+9월 26, 2017 19:30:00.82 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 20:26:55.49 
+9월 26, 2017 20:26:55.57 KLIB_SelfTest return : KLR_OK
+
+9월 27, 2017 24:19:50.76 NEW SESSION
+9월 27, 2017 24:19:50.76 
+9월 27, 2017 24:19:50.77 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 02:08:36.34 
+9월 27, 2017 02:08:36.35 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 02:13:08.33 
+9월 27, 2017 02:13:08.33 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 02:13:26.90 
+9월 27, 2017 02:13:26.90 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 02:16:20.30 
+9월 27, 2017 02:16:20.31 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 02:16:41.81 
+9월 27, 2017 02:16:41.81 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 02:52:17.60 
+9월 27, 2017 02:52:17.61 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 02:53:16.30 
+9월 27, 2017 02:53:16.30 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 02:55:04.58 
+9월 27, 2017 02:55:04.58 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 03:17:25.23 
+9월 27, 2017 03:17:25.24 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 03:21:32.90 
+9월 27, 2017 03:21:32.90 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 03:22:12.53 
+9월 27, 2017 03:22:12.53 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 09:27:00.09 
+9월 27, 2017 09:27:00.09 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 10:14:26.11 
+9월 27, 2017 10:14:26.11 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 10:15:16.59 
+9월 27, 2017 10:15:16.59 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 10:16:49.48 
+9월 27, 2017 10:16:49.49 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 10:18:49.94 
+9월 27, 2017 10:18:49.94 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 10:22:42.00 
+9월 27, 2017 10:22:42.01 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 10:23:04.53 
+9월 27, 2017 10:23:04.53 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 10:39:01.53 
+9월 27, 2017 10:39:01.53 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 10:54:58.33 
+9월 27, 2017 10:54:58.33 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 17:14:27.74 [3020:4456:0927/171427.675:ERROR:service_manager_context.cc(171)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\61.0.3163.100\content_browser.service.exe
+9월 27, 2017 17:14:27.74 [3020:4456:0927/171427.675:ERROR:service_manager_context.cc(171)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\61.0.3163.100\content_browser.service.exe
+9월 27, 2017 17:14:27.75 [3020:4456:0927/171427.675:ERROR:service_manager_context.cc(171)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\61.0.3163.100\content_browser.service.exe
+9월 27, 2017 17:14:27.75 [3020:4456:0927/171427.675:ERROR:service_manager_context.cc(171)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\61.0.3163.100\content_browser.service.exe
+9월 27, 2017 17:14:27.75 [3020:4456:0927/171427.675:ERROR:service_manager_context.cc(171)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\61.0.3163.100\content_browser.service.exe
+9월 27, 2017 17:14:27.75 [3020:4456:0927/171427.675:ERROR:service_manager_context.cc(171)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\61.0.3163.100\content_browser.service.exe
+9월 27, 2017 17:14:27.75 
+9월 27, 2017 17:14:27.75 [3020:4456:0927/171427.676:ERROR:service_manager_context.cc(171)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\61.0.3163.100\content_browser.service.exe
+9월 27, 2017 17:14:27.75 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 17:20:41.81 
+9월 27, 2017 17:20:41.81 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 17:23:55.16 
+9월 27, 2017 17:23:55.16 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 21:07:12.08 
+9월 27, 2017 21:07:12.16 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 21:13:42.94 
+9월 27, 2017 21:13:42.97 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 23:07:08.31 
+9월 27, 2017 23:07:08.34 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 23:18:30.61 
+9월 27, 2017 23:18:30.61 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 23:27:37.29 
+9월 27, 2017 23:27:37.29 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 04:33:43.19 
+9월 28, 2017 04:33:43.21 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 04:36:45.46 
+9월 28, 2017 04:36:45.69 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 04:42:22.57 
+9월 28, 2017 04:42:22.65 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 04:48:23.84 
+9월 28, 2017 04:48:23.84 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 06:19:32.48 
+9월 28, 2017 06:19:32.49 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 06:24:08.58 
+9월 28, 2017 06:24:08.58 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 07:35:09.46 
+9월 28, 2017 07:35:09.46 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 07:52:53.96 
+9월 28, 2017 07:52:54.00 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 07:54:41.07 
+9월 28, 2017 07:54:41.07 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 08:00:27.29 
+9월 28, 2017 08:00:27.29 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 14:20:19.53 
+9월 28, 2017 14:20:19.55 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 14:21:01.15 [5476:6112:0928/142101.153:ERROR:service_manager_context.cc(171)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\61.0.3163.100\content_browser.service.exe
+9월 28, 2017 14:21:01.21 
+9월 28, 2017 14:21:01.21 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 19:08:48.33 
+9월 28, 2017 19:08:48.35 KLIB_SelfTest return : KLR_OK
+
+10월 07, 2017 20:25:41.36 NEW SESSION
+10월 07, 2017 20:25:41.65 
+10월 07, 2017 20:25:41.72 KLIB_SelfTest return : KLR_OK

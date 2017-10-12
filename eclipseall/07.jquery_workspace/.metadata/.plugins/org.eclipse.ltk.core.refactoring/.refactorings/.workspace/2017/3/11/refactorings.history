@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;00.join_idcheck&apos; to &apos;00-1.join_idcheck&apos;" description="Rename resource &apos;00.join_idcheck&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/00.join_idcheck" name="00-1.join_idcheck" stamp="1489550967399" updateReferences="true"/>
+</session>

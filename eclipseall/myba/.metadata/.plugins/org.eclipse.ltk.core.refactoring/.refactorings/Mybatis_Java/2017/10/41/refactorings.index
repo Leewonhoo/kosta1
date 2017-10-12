@@ -1,0 +1,22 @@
+1507619964781	Rename resource 'BMEMBER.xml'
+1507620120075	Rename resource 'MYBATIS_CONFIG.xml'
+1507689804066	Delete elements
+1507692074415	Rename resource 'bmember_mapper.xml'
+1507692079650	Rename resource 'blog_mapper.xml'
+1507692085475	Rename resource 'bboard_mapper.xml'
+1507692559267	Rename resource 'bboard-mapper.xml'
+1507692564528	Rename resource 'blog-mapper.xml'
+1507692569217	Rename resource 'bmember-mapper.xml'
+1507697246060	Rename package 'docs'
+1507697252472	Move package
+1507701363679	Delete element
+1507701412549	Delete element
+1507701443870	Delete element
+1507704286355	Copy package
+1507704296989	Rename resource 'resources'
+1507704321380	Delete elements
+1507705185813	Delete element
+1507705199132	Rename resource 'test-mapper.xml'
+1507705236683	Rename resource 'bmember-mapper.xml'
+1507705295613	Rename resource 'bmember_mapper.xml'
+1507708144849	Rename resource 'sample-mapper.xml'

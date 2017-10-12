@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>JQuery Examples</title>
+        <!-- 
+        	no-repeat : 이미지 한번만
+        	display:inline : 블록엘리먼트 빈공간제거하여 한라인에 공백없이 보이게함
+         -->
+        <style type="text/css">
+			.liststyle {
+				background-image:url(arrow.jpg);
+				background-repeat:no-repeat;
+				background-position:left;
+				padding-left:30px;
+				display: inline;
+			}
+			<!--
+				list-style:none : <li> 기호 제거
+			-->
+			.uliststyle {
+				list-style:none;
+				margin:0;
+				padding:0;
+				display: inline;
+			}		
+		</style>
+        <script src="script/jquery-1.7.1.js" type="text/javascript"></script>  
+        <script type="text/javascript">
+			$(document).ready(function() {
+			  $('ul').addClass('uliststyle');
+			  $('ul li ul li').addClass('liststyle');
+			});
+		</script>
+  </head>
+<body>
+	<ul id="menu">
+		<li><a href="http://example.com">Books</a>
+     	<ul>
+       	<li><a href="http://example.com">Web Development</a></li>
+       	<li><a href="http://example.com">Programming</a></li>
+       	<li><a href="http://example.com">RDBMS</a></li>
+			</ul>
+		</li>
+	</ul>
+</body>

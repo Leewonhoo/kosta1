@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="div1">
+	<!-- 삭제될 1번 요소 -->
+    <p id="p1">여기는 1번 요소 자리</p>
+    <p id="p2">여기는 2번 요소 자리</p>
+    <!-- 추가될 새로운 3번 요소 위치 -->
+</div>
+
+<script>
+	// create & append
+    var para=document.createElement("p");
+    var node=document.createTextNode("새로운 3번 요소");
+    para.appendChild(node);
+    var element=document.getElementById("div1");
+    element.appendChild(para);
+    
+    // remove : 부모검색 -> 자식검색 -> 부모의 자식삭제(3단계)
+    var parent=document.getElementById("div1");
+    var child=document.getElementById("p1");
+    parent.removeChild(child);    
+    
+  	// remove : 삭제요소검색 -> 삭제할요소의 부모검색해서 자식삭제(2단계)
+    var child=document.getElementById("p1");
+    child.parentNode.removeChild(child);
+
+</script>
+
+</body>
+</html>
+
+
+
+

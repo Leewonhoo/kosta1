@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>JQuery Examples</title>
+        <style type="text/css">
+			 #scroller {
+			  height: 460px;
+			  width: 150px;
+			  overflow:hidden;
+			  position: relative;
+			  margin:auto;
+			}
+			
+			#scroller a img { border:0; position:relative;}
+        </style>
+        <script src="script/jquery-1.7.1.js" type="text/javascript"></script>  
+        <script type="text/javascript">
+        $(document).ready(function() {
+        	  var $wrapper=$('#scroller a img');
+        	  $wrapper.css({bottom:750});    
+        	  var animator = function(imgblock) {
+        	    imgblock.animate(
+        	      {bottom:-460}, 5000,  
+        	      function() {
+        	        imgblock.css({bottom:750});
+        	        animator($(this));
+        	      }
+        	    );
+        	  }
+        	  animator($wrapper);
+        	});        
+        </script>
+  </head>
+<body>
+<div id="scroller">
+<a href="http://example.com" ><img src="image1.jpg" width=150px height=150px /></a>
+<a href="http://example.com"><img src="image2.jpg"  width=150px height=150px /></a>
+<a href="http://example.com"><img src="image3.jpg"  width=150px height=150px /></a>
+<a href="http://example.com" ><img src="image4.jpg"  width=150px height=150px /></a>
+<a href="http://example.com" ><img src="image5.jpg"  width=150px height=150px /></a>
+</div>
+</body>

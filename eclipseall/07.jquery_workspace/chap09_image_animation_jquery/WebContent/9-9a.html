@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>JQuery Examples</title>
+        <style type="text/css">
+			#news_scroller{position:relative; height:200px; width:200px; overflow:hidden; border:2px solid ; padding:10px;} 
+			p{position:relative;} 
+        </style>
+        <script src="script/jquery-1.7.1.js" type="text/javascript"></script>  
+        <script type="text/javascript">
+        $(document).ready(function() {
+        	  ticker_height = $('#news_scroller').height();
+        	  news_height=$('#news_scroller p').height();
+        	  no_oflines = 0;
+        	  scroll();
+        	});
+
+        	function scroll() {
+        	  no_oflines -= 2;
+        	  $('#news_scroller p').css( 'top', ''+no_oflines+"px" );
+        	  if( no_oflines<-1*news_height ) no_oflines = ticker_height;
+        	  setTimeout( scroll, 50 );
+        	}
+        </script>
+  </head>
+<body>
+<div id="news_scroller">
+<p>Styles make the formatting job much easier and efficient. To give an attractive look to web sites, styles are heavily used. A person must have a good knowledge of HTML and CSS and a bit of Javascript.   
+jQuery is a powerful JavaScript library that allows us to add dynamic elements to our web sites. Not only it is easy to learn but easy to implement too. 
+jQuery is an open source project that provides a wide range of features with cross platform compatiblity. jQuery has hundreds of plug-ins to extend its features. JQuery helps in increasing interactions with a web site. 
+</div>
+</body>

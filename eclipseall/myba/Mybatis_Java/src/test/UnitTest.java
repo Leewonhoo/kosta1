@@ -1,0 +1,27 @@
+package test;
+
+import java.util.HashMap;
+
+import org.apache.ibatis.session.SqlSession;
+
+import pro.model.dao.FactoryDao;
+
+public class UnitTest {
+
+	public static void main(String[] args) {
+		System.out.println("Unit Test");
+		FactoryDao factory = FactoryDao.getinstance();
+		SqlSession sqlSession = factory.openSession();
+		try {
+			//idisa1       password1            강감찬         행주
+			HashMap<String, String> hashmap = new HashMap<String, String>();
+			hashmap.put("id", "idisa1");
+			hashmap.put("pw", "password1");
+			String result = sqlSession.selectOne("loginCheck", hashmap);
+			System.out.println("login result : " + result);
+		} finally {
+			sqlSession.close();
+		}
+	}
+
+}

@@ -1,0 +1,23 @@
+1506277596450	Rename resource 'Address.jsp'
+1506277727626	Delete element
+1506321079132	Delete element
+1506323737275	Rename resource 'Address.jsp'
+1506323762115	Delete element
+1506341026613	Delete element
+1506387125691	Move 'nse_files' to 'nse'
+1506387495851	Move 'nse_files' to 'docs'
+1506387522791	Delete element
+1506405795638	Rename field 'bNum'
+1506473738798	Delete element
+1506560641932	Rename field 'F_DATE'
+1506560652134	Rename field 'F_ANUM'
+1506560658770	Rename field 'F_FNAME'
+1506560665819	Rename field 'F_LEAVE'
+1506560703340	Rename field 'fLEVDATE'
+1506560711971	Rename field 'F_ARRIVE'
+1506560723741	Rename field 'F_ARRIDATE'
+1506560731881	Rename field 'F_GATE'
+1506566776454	Delete element
+1506574885738	Rename resource 'airr.JPG'
+1506574890505	Rename resource 'air.JPG'
+1506661177597	Rename resource 'customer_dml.sql'

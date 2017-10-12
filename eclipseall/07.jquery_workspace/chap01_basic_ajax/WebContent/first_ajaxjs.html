@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE> AJAX First : ajax.js 파일 이용 </TITLE>
+
+<script language="javascript" src="ajax.js"></script>
+<script language="javascript">
+<!--
+	//===== ajax 요청
+	//sendRequest("hello.jsp", null, parseCompletedReponse, "GET");
+	new ajax.xhr.Request("hello.jsp", "", parseCompletedReponse, 'GET');
+
+	//======= 3. response parshing
+	function parseCompletedReponse(xhr) {
+		window.status="요청 응답 상태 : " + xhr.readyState
+		if (xhr.readyState == 4) {
+			if (xhr.status == 200) {
+				// 요청 응답 성공 : 응답처리 수행
+				alert(xhr.responseText);
+			} else {
+				// 요청 응답 실패
+				alert('요청 오류 발생');
+			}
+		}  else {
+			window.status = '요청 처리중입니다. 요청 응답 상태 : ' + xhr.readyState;
+		}
+		window.status="";
+	}	
+
+//-->
+</script>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>
+

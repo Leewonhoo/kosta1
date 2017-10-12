@@ -1,0 +1,87 @@
+<!--
+	## 부모윈도우 및 자식윈도우 사용하기
+	
+	1. 부모윈도우 : 회원가입페이지
+	2. 자식윈도우 : 아이디 중복확인 페이지
+	
+	3. 자식윈도우에서 부모윈도우에 대한 참조객체 : window.opener
+	   var 변수명 = window.opener.document.부모윈도우의폼이름.엘리먼트이름.value;
+	
+	4. 부모윈도우에서 자식윈도우 열기
+			var childWindow = window.open('자식윈도우페이지url', 'windowName', '윈도우환경설정');
+			(자식윈도우 오픈시에 설정한 변수를 통해서 부모윈도우에서 자식윈도우 객체 사용가능)
+			
+	5. 부모윈도우에서 자식윈도우에 대한 참조객체 : 
+			var 변수명 = childWindow.document.자식윈도우의폼이름.엘리먼트이름.value;
+-->
+
+<HTML>
+<HEAD>
+<TITLE> 새로운 윈도우 열기 </TITLE>
+<script type="text/javascript">
+<!--
+	/* 아이디 중복 검증을 위한 새로운 윈도우 열기 메서드 */
+	function idCheck() {
+		var userid = document.customerForm.userid.value;
+		var windowConfig = 'toolbar=no,location=no,status=0,menubar=no,scrollbars=auto,resizable=yes,width=400,height=300,top=50,left=50';
+		// 자식 윈도우 객체 : 아이디 중복확인 윈도우
+		var childWindow = window.open('idCheck.html','idCheck', windowConfig)
+	}
+	
+	/* 회원가입 요청 메서드 */
+	function insertSubmit() {
+		document.customerForm.action = "#";
+		document.customerForm.submit();
+	}
+	
+//-->	
+</script>	
+</HEAD>
+
+<BODY>
+	<h3>아이디 중복 검증을 위한 새로운 윈도우  열기</h3>
+	
+	<form name="customerForm" action="post">
+		<table border="1">
+			<caption>기본정보</caption>
+			<hr style="color:green;">
+			<tr>
+				<td>아이디</td>
+				<td>
+					<input type="text" name="userid" maxlength="8" style="width:150px;background:#D2FFD2">
+					&nbsp;&nbsp;
+					<input type="button" value="아이디중복확인"  onclick="idCheck()">
+				</td>
+		  </tr>
+		  
+			<tr>
+				<td>비밀번호</td>
+				<td>
+					<input type="password" name="userpw" maxlength="8" style="width:150px;">
+				</td>
+		  </tr>
+
+			<tr>
+				<td>비밀번호확인</td>
+				<td>
+					<input type="password" name="userpw2" maxlength="8" style="width:150px;">
+				</td>
+		  </tr>
+		  	
+			<tr>
+				<td>이름</td>
+				<td>
+					<input type="text" name="username" style="width:150px;">
+				</td>
+		  </tr>
+		  
+			<tr>
+				<td align="center" colspan="2">
+					<input type="button" value="회원가입" onClick="insertSubmit()">
+				</td>
+		  </tr>
+		  		  	  	  
+		</table>	
+	</form>
+</BODY>
+</HTML>

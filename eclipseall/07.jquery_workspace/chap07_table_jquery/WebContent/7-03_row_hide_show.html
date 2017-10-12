@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>JQuery Examples</title>
+        <style type="text/css">
+        	.hover { background-color: #00f; color: #fff; }
+        </style>
+        <script src="script/jquery-1.7.1.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+	        $(document).ready(function() {   
+	        	  $('tbody tr').hover(
+	        	    function(){   
+	        	      $(this).find('td').addClass('hover');   
+	        	    }, 
+	        	    function(){   
+	        	      $(this).find('td').removeClass('hover');   
+	        	    }
+	        	  );   
+					
+	        	  // 클릭하여 선택한 행을 제외한 나머지행은 감추기
+	        	  /*
+	        	  $('tbody tr').click(function(){   
+	        	      $('table').find('tbody tr').hide();
+	        	      $(this).show();   
+	        	  }); 
+	        	  */
+	        	  
+	        	  // TODO 1: 클릭하여 선택한 행만 감추기 / 나머지 다른행은 보이기
+	        	  /*
+		          $('tbody tr').click(function(){   
+	        	      $('table').find('tbody tr').show();
+	        	      $(this).hide();   
+	        	  }); 
+	        	  */
+	        	  
+	        	  // TODO 2: 클릭하여 선택한 행 감추기
+		          //*
+	        	  $('tbody tr').click(function(){   
+	        	      $(this).hide();   
+	        	  }); 
+	        	  //*/
+	        	  
+	        	  // TODO 2: 더블클릭(dblclick)하면 테이블 body 전체행 보이기
+	        	  //*
+	        	  $('tbody tr').dblclick(function(){   
+		        	  $('table').find('tbody tr').show();
+		          }); 	        	  
+	       		  //*/
+	        });       
+        </script>
+  </head>
+<body>
+<table border="1">
+<thead>
+<tr><th>Roll</th><th>Name</th><th>Marks</th></tr>
+</thead>
+<tbody>
+<tr><td>101</td><td>John</td><td>87</td></tr>
+<tr><td>102</td><td>Naman</td><td>90</td></tr>
+<tr><td>103</td><td>Chirag</td><td>85</td></tr>
+<tr><td>104</td><td>David</td><td>92</td></tr>
+<tr><td>105</td><td>Kelly</td><td>81</td></tr>
+</tbody>
+</table>
+</body>

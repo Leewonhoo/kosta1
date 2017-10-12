@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>JQuery Examples</title>
+        <style type="text/css">
+			.mainmenu {float:left; width:200px; list-style-type:none; margin-right:5px;}
+			li.mainmenu ul {margin: 0;  } 
+			a  {width: 200px;display:block; text-decoration: none; background: #00f;  color: #fff;padding: 0.5em;   border-bottom: 1px solid #fff; }
+			ul#dropdownmenu li a:hover {  background: #000;}
+		</style>
+        <script src="script/jquery-1.7.1.js" type="text/javascript"></script>  
+        <script type="text/javascript">
+			$(document).ready(function(){
+			  $('li.mainmenu').hover(
+				function() { 
+				  $('ul', this).show(); 
+				},
+				function() { 
+				  $('ul', this).hide(); 
+				}
+			  );
+			});		
+		</script>
+  </head>
+<body>
+<ul id="dropdownmenu">
+<li class="mainmenu">
+	<a href="example.com">Books</a>
+	 <ul>
+	  <li><a href="example.com">Web Development</a></li>
+	  <li><a href="example.com">Programming</a></li>
+	  <li><a href="example.com">RDBMS</a></li>
+	 </ul>
+	 </li>
+	  <li class="mainmenu">
+	  <a href="example.com">Movies</a>
+         <ul>
+	  <li><a href="example.com">Latest Movie Trailers</a></li>
+	  <li><a href="example.com">Movie Reviews</a></li>
+	  <li><a href="example.com">Celebrity Interviews</a></li>
+	 </ul>
+ </li>
+</ul>
+</body>

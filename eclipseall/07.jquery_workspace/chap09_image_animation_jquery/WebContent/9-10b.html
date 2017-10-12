@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>JQuery Examples</title>
+        <style type="text/css">
+			.small img { border:none;margin:10px;width:60px; height:60px; }
+			.large{width:200px; height:200px;}
+			.hover{color: blue ; background-color:cyan }
+        </style>
+        <script src="script/jquery-1.7.1.js" type="text/javascript"></script>  
+        <script type="text/javascript">
+        $(document).ready(function() {   
+        	  $('td').find('p').css({'font-size':12, 'font-weight':'bold'});
+        	  $(".small").hover(
+        	    function(){
+        	      $(this).parent().addClass('hover');
+        	      var imgname = $(this).attr('href'); 
+        	      $(".large").fadeTo(
+        	        "slow", 0, 
+        	        function() {  
+        	          $('.large').attr('src',imgname);  
+        	        }
+        	      ).fadeTo("slow", 1);  
+        	    },
+        	    function(){   
+        	      $(this).parent().removeClass('hover');
+        	    }
+        	  );
+        	});           
+        </script>
+  </head>
+<body>
+<table border="1">
+<tr><td width=150 align=center> <a href="a1.jpg" class="small"><img src="a1.jpg"  /></a><p>
+"Model: M1001. Price 100$"</td><td rowspan="4" width=350 align=center><img src="a1.jpg" class="large" /></td></tr>
+<td width=150 align=center><a href="a2.jpg" class="small"><img src="a2.jpg"/></a><p>
+"Model: M1002. Price 150$"</p></td></tr>
+ <td width=150 align=center><a href="a3.jpg" class="small"><img src="a3.jpg"/></a><p>
+"Model: M1003. Price 90$"</td></tr>
+<td width=150 align=center> <a href="a4.jpg" class="small"><img src="a4.jpg"/></a><p>
+"Model: M1004. Price 200$"</td></tr>
+</table>
+</body>

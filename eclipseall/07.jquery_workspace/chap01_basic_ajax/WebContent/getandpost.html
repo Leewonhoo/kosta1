@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>HTTP 요청방식에 요청 파라메타데이터 한글 처리</title>
+<script type="text/javascript" language="javascript">
+	// 1. xhr 객체 생성
+	var xhr;
+	function createXMLHttpRequest() {
+		if (window.XMLHttpRequest) {
+			xhr = new XMLHttpRequest();
+		} else if (window.ActiveXObject) {
+			try {
+				xhr = new ActiveXObject("Msxml2.XMLHTTP");
+			} catch (e1) {
+				try {
+					xhr = new ActiveXObject("Microsoft.XMLHTTP");
+				} catch (e2) {
+					alert("해당 브라우저는 Ajax가 지원되지 않습니다.");
+				}
+			}
+		} else {
+			alert("해당 브라우저는 Ajax가 지원되지 않습니다.");
+		}
+	}
+	
+	// 5. 응답에 대한 파싱 처리 함수 
+	function parseCompletedResponse() {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			// 서버응답 결과를 위한 view div 가져오기
+			var viewResponseDiv = document.getElementById("viewResponse");
+
+			// div 자식 노드가 있으면 노드 삭제(즉, 기존 응답결과 처리 데이터가 있으면 삭제)
+			if (viewResponseDiv.hasChildNodes()) {
+				viewResponseDiv.removeChild(viewResponseDiv.childNodes[0]);
+			}
+			
+			// div 자식으로 TextNode 생성해서 자식노드로 추가
+			var responseText = document.createTextNode(xhr.responseText);
+			viewResponseDiv.appendChild(responseText);
+		}
+	}
+
+	// get 요청 클릭 이벤트 처리 함수
+	function doGetRequest() {
+		// 1. XMLHttpRequest 객체 생성
+		createXMLHttpRequest();
+		var params = createParamsData();
+		var url = "getandpost.jsp" + "?" + encodeURI(params);	// get 방식 : utf-8 인코딩
+				
+		// 2. 요청을 위한 초기화 
+		xhr.open('GET', url, true);
+		
+		// 3. 응답상태변화에 다른 콜백 핸들러 설정: () 붙이지 않음 주의!!!
+		xhr.onreadystatechange = parseCompletedResponse;
+		
+		// 4. 요청 헤더 정보 설정
+		//xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");	// post방식 : utf-8 인코딩
+		
+		// 5. 요청 전송 실행
+		xhr.send(null);
+	}
+	
+	// post 요청 클릭 이벤트 처리 함수
+	function doPostRequest() {
+		// 1. XMLHttpRequest 객체 생성
+		createXMLHttpRequest();
+		var url = "getandpost.jsp";
+		var params = createParamsData();
+		
+		// 2. 요청을 위한 초기화 
+		xhr.open('POST', url, true);
+		
+		// 3. 응답상태변화에 다른 콜백 핸들러 설정: () 붙이지 않음 주의!!!
+		xhr.onreadystatechange = function() { parseCompletedResponse(); }
+		
+		// 4. 요청 헤더 정보 설정
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");	// post방식 : utf-8 인코딩
+		
+		// 5. 요청 전송 실행
+		xhr.send(params);
+	}
+	
+	// form 입력 파라메타 데이터 가져오기
+	function createParamsData() {
+		var name = document.getElementById("name").value;
+		var params = "name=" + name;
+		return params;
+	}
+
+</script>
+
+</head>
+<body>
+<h3>요청 파라메타 데이터 서버 전송하기</h3>
+<form action="#">
+이름을 입력하세요: <input type="text" name="name" id="name" /><br/><br/>
+<input type="button" value="GET 방식 전송" OnClick="doGetRequest()" style="width:150px" /><br/><br/>
+<input type="button" value="POST 방식 전송" OnClick="doPostRequest()" style="width:150px" /><br/><br/>
+</form>
+<h3>서버 응답 결과:</h3>
+<div id="viewResponse"></div>
+</body>
+</html>

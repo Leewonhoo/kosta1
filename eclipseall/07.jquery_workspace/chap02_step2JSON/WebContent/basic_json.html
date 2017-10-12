@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>JSON Basic</title>
+<script type="text/javascript" src="prototype.js"></script>
+<script type="text/javascript">
+	window.onload = function() {
+		resultDiv = document.getElementById("viewResult");
+	}
+
+	function test1() {
+		// 1. 단일 변수
+		var jsonData = {"userid":"hongman"};
+		resultDiv.innerHTML = jsonData.userid;
+	}
+	
+	function test2() {
+		 //2. 색인 배열     
+		var jsonData = ["hongman", "himan", "blueman", "smileman"];
+		var jsonObj = eval(jsonData);
+
+		resultDiv.innerHTML = jsonData[3] + " : " + jsonObj[3]; 
+	}
+
+	function test3() {
+		// 3. 연관 배열
+		var jsonData = { "kor":"90", "eng":"85", "math":"100" };
+	  	var jsonObj = eval(jsonData);
+	  	
+	//	resultDiv.innerHTML = jsonData['eng'] + " : " + jsonData.eng; 
+		resultDiv.innerHTML = jsonObj['kor'] + " : " + jsonObj.kor; 
+	}
+
+	function test4() {
+		// 4-1. 단일 변수 & 배열 혼합
+		var jsonData = { "customers": [
+				                		{ "name": "홍길동", "address":"서울시 마포구", "email": "hong@abc.com" },
+				                		{ "name": "강감찬", "address":"부산시 동래구", "email": "kang@abc.com" },
+				                		{ "name": "이순신", "address":"서울시 종로구", "email": "lee@abc.com" }
+				              ]			              
+        };
+ 		// 강감찬의 주소 출력
+ 		var html = "";
+ 		beforeAddress = "강감찬의 변경전 주소 : " + jsonData.customers[1].address;
+
+ 		// 강감찬의 주소를 "경기도 양주시" 로 변경 후 출력
+ 		jsonData.customers[1].address = "경기도 양주시";
+ 		afterAddress = "강감찬의 변경후 주소 : " + jsonData.customers[1].address;
+ 		resultDiv.innerHTML = beforeAddress + "<br/>" + afterAddress;
+ 	}
+
+	/* todo : 제공된 excel 데이터를 참고로해서 작성해보세요. 
+		- Programmer, Author, Musician 
+	*/
+	function test5() {
+		var members = { "programmers": [
+						                  { "name": "홍길동", "address":"서울시 마포구", "email": "hong@abc.com" },
+						                  { "name": "강감찬", "address":"부산시 동래구", "email": "kang@abc.com" },
+						                  { "name": "이순신", "address":"서울시 종로구", "email": "lee@abc.com" }
+					                 ],
+					                "authors": [
+						                  { "name": "김은옥", "title": "Ajax 웹프로그래밍", "part": "Programming" },
+						                  { "name": "고범석", "title": "객체지향 분석설계", "part": "OOAD" },
+						                  { "name": "고슬링", "title": "자바 프로그래밍", "part": "Programming" }
+					                 ],
+					                "musicians": [
+						                  { "name": "유키구라모토", "publisher": " ABC Music", "instrument": "guitar" },
+						                  { "name": "쇼팽", "publisher": "ABC Music", "instrument": "piano" }
+					                 ]
+					                }
+		// 고슬링 작가의 도서명 출력
+		resultDiv.innerHTML = "고슬링의 도서명: " + members.authors[2].title;		
+	}
+	
+	/* todo : 제공된 excel 데이터를 참고로해서 작성해보세요. 
+		- 성적 데이터
+	*/
+ 	function test6() {
+		// 4. 단일 변수 & 배열 혼합
+		var jsonData = eval(
+				[
+					{
+						"name" : "홍길동",	
+						"userid": "hongman",
+						"num" : 23,
+						"score" : {"kor": 90, "eng":85, "math": 100},
+						"his" : [2,4,2]
+					},
+
+					{
+						"name" : "하이맨",
+						"userid": "himan",
+						"num" : 24,
+						"score" : {"kor": 80, "eng":90, "math": 70},
+						"his" : [7,3,7]
+					},
+
+					{
+						"name" : "블루맨",
+						"userid": "blueman",
+						"num" : 25,
+						"score" : {"kor": 80, "eng":70, "math": 70},
+						"his" : [9,8,9]
+					},
+					
+					{
+						"name" : "스마일맨",
+						"userid": "smileman",
+						"num" : 26,
+						"score" : {"kor": 100, "eng":90, "math": 95},
+						"his" : [3,9,1]
+					}
+				]
+		);	
+
+		// 홍길동의 국어점수와 지난달 등수 출력
+		var name = jsonData[0].name;
+		var kor = jsonData[0].score.kor;
+		var his = jsonData[0].his[1];
+		resultDiv.innerHTML = name + ":" + kor + ":" + his;
+
+	}
+
+</script>
+</head>
+
+<body>
+
+<input type="button" onclick="test1()" value="1.단일변수" />&nbsp;&nbsp;
+<input type="button" onclick="test2()" value="2.색인배열" />&nbsp;&nbsp;
+<input type="button" onclick="test3()" value="3.연관배열" />&nbsp;&nbsp;
+<input type="button" onclick="test4()" value="4-1.단일 및 배열 혼합" />&nbsp;&nbsp;
+<input type="button" onclick="test5()" value="4-2.단일 및 배열 혼합" />&nbsp;&nbsp;
+<input type="button" onclick="test6()" value="4-3.단일 및 배열 혼합" />&nbsp;&nbsp;
+
+<hr/>
+<B>Console : </B>
+<div id="viewResult"></div>
+</body>
+</html>

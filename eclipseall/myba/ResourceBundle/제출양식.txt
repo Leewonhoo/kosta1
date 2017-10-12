@@ -1,0 +1,23 @@
+1차 JDBC 프로젝트 제출
+
+제출파일 양식
+- 날짜_이름.zip
+- 메일 제목 : 날짜_이름_주제
+- 제출파일 구성요소 : 프로젝트 파일 전체
+
+project 폴더 관련 문서 폴더 구조
+- docs\sql > ddl, dml sql script 파일                            O
+- docs\bin > 실행 가능한 .jar, 실행 배치 파일.bat.txt           O
+- docs\api > apo documemtation 파일(내부용, 공개용)            O
+- docs\misc > 프로젝트 관련 기타 문서
+- docs\발표 > 발표자료(파워포인터 등)                      O
+- docs\수행결과 > 이름_수행결과 .pptx (실행화면 화면 캡처)   O
+
+발표자료 구성
+- 형식 X
+- 개요 (프로젝트 설명)
+- 설계 (UI, DB ..)
+- 장점
+- 단점, 아쉬운 점
+- 시연
+

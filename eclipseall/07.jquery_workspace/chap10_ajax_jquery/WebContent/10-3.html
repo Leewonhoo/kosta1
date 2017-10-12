@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>JQuery Examples</title>
+        <style type="text/css" >
+			.label {float: left; width: 120px; } 
+			.uname {width:200px; } 
+			.error { color: red; padding-left: 10px; }
+			#submit { width:80px; margin-left: 125px; margin-top: 10px;}
+		</style>
+		<script src="script/jquery-1.7.1.js" type="text/javascript"></script>  
+        <script type="text/javascript">
+			$(document).ready(function() {   
+				$('.error').hide();
+				$('#submit').click(function () {           
+					var name = $('.uname').val();		
+					var data='uname='+name;
+					$.ajax({
+						type:"POST",
+						url:"validateuser.jsp", 
+						data:data,             
+						success:function(html) {
+							$('.error').show();		
+							$('.error').text(html);				
+						}
+					});		
+					return false;	
+				});
+			});		
+		</script>
+  </head>
+<body>
+  <form>  
+    <span class="label">Enter your Name</span>  
+    <input type="text"  name="uname" class="uname"/>  <span class="error"> </span><br/>
+    <input type="submit" id="submit"  value="Ok"/>  
+  </form>  
+</body>

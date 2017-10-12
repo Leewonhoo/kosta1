@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>JQuery Examples</title>
+        <style type="text/css"  >
+        	.image{position:relative;}
+        	
+        	// 이미지를 브라우저 중앙에 위치되도록 css 설정 
+        	#scroller{
+        		width:155px;
+        		height:155px;
+        		margin:auto;
+        		overflow:hidden;
+        		position:relative;
+        	}
+        </style>
+        <script src="script/jquery-1.7.1.js" type="text/javascript"></script>  
+        <script type="text/javascript">
+        $(document).ready(function() {
+        	$('#scroller').css({'position': 'absolute', 'left':(screen.availWidth-150)/2, 'top':(screen.availHeight-150)/2});
+      	  	$('.image').click(function (event){ 
+            	var maxWidth = screen.availWidth; 	// 1280
+        	    $(this).animate({'right': -maxWidth/2}, 'slow' );		// 왼쪽/오른쪽으로 animate 효과부여
+        	  });
+        	});       
+        </script>
+  </head>
+<body>
+<!--  TODO : 이미지 중앙에 위치시키고, 클릭시 오른쪽으로 슬라이더 사라지게 표시 -->
+<div id="scroller"">
+<img src="image1.jpg" width=150px height=150px class="image"/>
+</div>
+</body>
+</html>
+

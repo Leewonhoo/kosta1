@@ -1,0 +1,15 @@
+@charset "EUC-KR";
+
+a {
+	text-decoration: none; 
+	color:black;
+}
+a:hover{
+	text-decoration: blink;
+	color:white; 
+}
+
+tr {
+	font-family:verdana,Courier,Monospace; 
+	text-decoration: none;
+}

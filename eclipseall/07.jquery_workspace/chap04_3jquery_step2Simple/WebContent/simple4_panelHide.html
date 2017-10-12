@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="script/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		/* .ex라는 class명을 보유한 tag내의 .hide 라는 class명을 보유한 tag에
+		click 발생시 실행되는 이벤트 로직
+		$(this).parents(".ex").hide("fast");
+		- this. - 이벤트 실제 발생된 버튼 의미
+		- 버튼 관점에서 parents(".ex"); - 부모 중에서 .ex라는 class를 보유한 tag		
+		*/
+		$(".ex .hide").click(function() {
+			$(this).parents(".ex").hide("fast");
+		});
+	});
+</script>
+<style type="text/css">
+div.ex {
+	background-color: #e5eecc;
+	padding: 7px;
+	border: solid 1px #c3c3c3;
+}
+</style>
+</head>
+
+<body>
+
+	<h3>table이 숨겨지는 기능 확인하기</h3>
+	<div class="ex">
+		<button class="hide" type="button">Hide me</button>
+		<p>
+			박지성<br />
+		   	박주영<br />
+		   	김남일
+		</p>
+	</div>
+	
+	<h3>Paris spécialités</h3>
+	<div class="ex">
+		<button class="hide" type="button">Hide me</button>
+		<p>
+			로드넘버 원 <br />
+			김하늘, 소지섭 주연<br />
+			전쟁 드라마
+		</p>
+	</div>
+
+</body>
+</html>

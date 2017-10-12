@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>What's for dinner?</title>
+<script type="text/javascript" src="script/jquery.js"></script>
+<script type="text/javascript">
+/* * 실시간 동적 데이타를 서버로 부터 받아와서 html 화면에 출력하는 로직
+ * 고려사항
+ 1. 메뉴데이타 우선 출력
+ 	1.로딩되는 시점에 자동 실행해서 결과 출력
+ 	2. 서버가 전송시키는 데이타 포멧? JSON, XML, HTML, CSV
+ 	3. JSON인경우 어떻게 화면에 출력을 할 것인가..골치아프다
+ 		- $.getJSON 함수 활용하시면 굉장히 쉬운 개발 가능
+ 	
+ 2. 선택한 메뉴의 상세 정보 출력
+
+3. 실제 코드
+	ready함수에 적용하고자 하는 로직  = 1+2로직 등록 */
+	$(document).ready(function() {
+		$.getJSON('fetchItemList.jsp', loadItems);		//메뉴 출력 관련 : json menu
+		$('#itemsControl').change(showItemInfo);	//특정 메뉴 선택시 상세 정보 출력
+	});
+	
+	function loadItems(itemList) {		
+		for ( var n = 0; n < itemList.length; n++) {
+			$('#itemsControl').get(0).add(
+					new Option(itemList[n].name, itemList[n].id),
+					document.all ? 0 : null);
+		}
+	}
+	function showItemInfo() {
+		$.get('fetchItem.jsp', {//
+			id : $(this).val()
+		}, function(data) {
+			$('#itemData').empty().append(data);
+		});
+		/* $('#itemData').empty().append(data); 
+		itemData id값을 보유한 위치에 어떤 데이타가 있던지간에 clear(empty())
+		-> append 함수로 적용된 데이타 출력 
+		*/
+	}
+</script>
+</head>
+
+<body>
+	<form style="float: left">
+		<select id="itemsControl" name="items"	size="8"></select>
+	</form>
+	
+	<div id="itemData" style="float: left"></div>
+</body>
+
+</html>

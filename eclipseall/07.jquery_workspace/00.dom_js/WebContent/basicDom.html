@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+
+	<head>
+		<title>도서정보</title>
+		<script language="javascript" type="text/javascript">
+			window.onload = function() {
+				// 루트 노드
+				var rootNode = document.documentElement;
+				//alert("root node : " + rootNode.nodeName);
+				//alert("root node 내용:\n" + rootNode.innerHTML);
+
+				// head element
+				var headNode = rootNode.firstChild;
+				//alert("head node : " + headNode.nodeName);
+				//alert("head node 내용:\n" + headNode.innerHTML);
+
+				// body element
+				var bodyNode = rootNode.lastChild;
+//				alert("body node : " + bodyNode.nodeName);
+//				alert("body node 내용 :\n" + bodyNode.innerHTML);
+
+				// body 노드의 첫번째 자식 h1 노드
+				var h1FirstNode = bodyNode.firstChild;
+				var h1FirstTextNode = h1FirstNode.firstChild;
+				//alert(h1FirstNode.nodeType + " : " + h1FirstNode.nodeName + " : " + h1FirstNode.nodeValue);
+				//alert(h1FirstTextNode.nodeType + " : " + h1FirstTextNode.nodeName + " : " + h1FirstTextNode.nodeValue);
+
+				// body의 형제노드
+				var bodyChildNodes = bodyNode.childNodes;
+				//alert(bodyChildNodes.length);
+				for (var i=0; i < bodyChildNodes.length ; i++ ) {
+					var h1 = bodyChildNodes.item(i);		// 메서드 접근
+					//var h1 = bodyChildNodes[i];			// 배열 인덱스 접근
+					//alert(h1.nodeName);
+					alert((i+1) + "번째 자식노드 제목: " + h1.innerHTML);
+				}
+
+			}
+		</script>
+	</head>
+	<BODY>
+		<h1 id="b1"><b>AJAX</b></h1>
+		<h1 id="b2"><i>AJAX 실전 프로그래밍</i></h1>
+		<h1 id="b3">
+			<ol>
+				<li>JAVA</li>
+				<li>AJAX</li>
+			</ol>
+		</h1>
+		<h1 id="b4">JDBC 프로그래밍</h1>
+	</BODY>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="false" key="J2EE_EXPORT_OVERWRITE"/>
+	<item value="false" key="J2EE_EXPORT_SOURCE"/>
+	<list key="J2EE_IMPORT_null">
+		<item value="I:\ho\eclipseall\FlyPeanut2.war"/>
+	</list>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="Apache Tomcat v8.5"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="I:\ho\webteam\3팀최종_이원호_FlyPeanut\Flypeanut1.war"/>
+		<item value="I:\ho\webteam\3팀최종_이원호_FlyPeanut\FlyPeanut.war"/>
+		<item value="C:\tomcat\apache-tomcat-8.5.20-windows-x64\apache-tomcat-8.5.20\webapps\Flypeanut.war"/>
+		<item value="C:\tomcat\apache-tomcat-8.5.20-windows-x64\apache-tomcat-8.5.20\webapps\FlyPeanut.war"/>
+	</list>
+</section>

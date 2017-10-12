@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+				 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="blog">
+	
+	<resultMap id="blogResult" type="blog">
+		<result property="l_id" column="m_id" />
+		<result property="l_start" column="m_pw" />
+		<result property="l_end" column="m_name" />
+		<result property="l_status" column="m_nick" />
+		<result property="l_ip" column="m_birth" />
+	</resultMap>
+
+	<select id="idCheck" parameterType="String" resultType="String">
+		SELECT M_ID
+		FROM BMEMBER
+		WHERE M_ID=#{bmemId}
+	</select>
+	
+	<select id="nickCheck" parameterType="String" resultType="String">
+		SELECT M_NICK
+		FROM BMEMBER
+		WHERE M_NICK=#{bmemNick}
+	</select>
+	
+	<select id="login" parameterType="String" resultType="bmemberResult">
+		SELECT m_id, m_pw, m_nick
+		FROM BMEMBER
+		WHERE m_id=#{bmemId}
+	</select>
+
+	<select id="idSearch" parameterType="String" resultType="bmemberResult">
+		SELECT m_id, m_name, to_char(m_birth,'yyyyMMdd')\"m_birth\", m_answer
+		FROM BMEMBER
+		WHERE m_name=#{bmemName}
+	</select>
+	
+	<select id="pwSearch" parameterType="String" resultType="bmemberResult">
+		SELECT m_id, m_pw, m_name, to_char(m_birth,'yyyyMMdd')\"m_birth\", m_answer
+		FROM BMEMBER
+		WHERE m_id=#{bmemId}
+	</select>
+	
+	<select id="inforSelect" parameterType="hashmap" resultType="bmemberResult">
+		SELECT m_id, m_pw, m_name, m_name, m_nick, to_char(m_birth,'yyyyMMdd')\"m_birth\", m_phone, m_mail, m_gender, m_address, m_answer
+		FROM BMEMBER
+		WHERE m_id=#{bmemId} AND m_nick=#{bmemNick}
+	</select>
+	
+	<insert id="bmeminsert" parameterType="bmember">
+		INSERT INTO BMEMBER
+		VALUES (#{bmemId},#{bmemPw},#{bmemName},#{bmemNick},#{bmemBirth},#{bmemPhone},#{bmemMail},#{bmemGender},#{bmemAddress},1,#{bmemAnswer})
+	</insert>
+
+	<update id="bmemupdate" parameterType="bmember">
+		UPDATE BMEMBER
+		SET m_pw=#{bmemPw},
+		m_nick=#{bmemNick},
+		m_birth=#{bmemBirth},
+		m_phone=#{bmemPhone},
+		m_mail=#{bmemMail},
+		m_gender=#{bmemGender},
+		m_address=#{bmemAddress},
+		m_answer=#{bmemAnswer}
+		WHERE m_id=#{bmemId}
+	</update>
+	
+	<delete id="bmemdelete" parameterType="String">
+		DELETE
+		FROM BMEMBER
+		WHERE m_id=#{bmemId}
+	</delete>
+	
+</mapper>

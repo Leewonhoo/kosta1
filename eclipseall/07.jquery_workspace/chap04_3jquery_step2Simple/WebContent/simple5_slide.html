@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<script type="text/javascript" src="script/jquery.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".flip").click(function() {
+			$(".panel").slideToggle("slow");
+		});
+	});
+</script>
+
+<style type="text/css">
+div.panel,p.flip {
+	margin: 0px;
+	padding: 5px;
+	text-align: center;
+	background: #e5eecc;
+	border: solid 1px #c3c3c3;
+}
+/* div중 panel이라는 class속성으로 설정된 옵션 설정
+display: none; 초기화면에선 보이지 말라 */
+div.panel {
+	height: 200px;
+	display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="panel">
+<p>60년만에 이루어진 사랑과 우정의 약속 머슴의 아들 이장우는 몰락한 주인집 딸인 김수연을 남몰래 마음속에 품고 있다.<br>
+</br>가진 것이라곤 그림 그리는 소질뿐인 장우. 틈나는 대로 수연을 훔쳐보며 그녀의 모습을 그림으로 옮겨 간직하는 게 할 수 있는 짝사랑의 전부다.<br>
+</br> 내심 장우의 마음을 알면서도 곁은 주지 않는 소녀, 수연. 어느 날, 장우가 몰래 그려온 수연의 초상화들을 오빠 수혁이 발견하게 되고 다시는 이런 짓을 하지 말라며 장우의 손을 낫으로 내려찍는다.<br></br>
+ 그럼에도 수연에 대한 마음을 접지 못하는 장우. 장우의 한결같은 사랑에 결국 수연은 마음을 열고 소년을 받아들인다.</p>
+</div>
+
+<p class="flip">Show/Hide Panel</p>
+
+</body>
+</html>

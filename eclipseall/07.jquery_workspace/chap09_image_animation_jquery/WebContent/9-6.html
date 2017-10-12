@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>JQuery Examples</title>
+        <style type="text/css" >
+			 .imge{
+			 	/* 이미지 위에 마우스 올리면 같은 위치에 다른 이미지 대체위해서 absolute로 설정*/
+				position:absolute; 
+				top:10px;
+				left:10px;
+			}       
+        </style>
+        <script src="script/jquery-1.7.1.js" type="text/javascript"></script>  
+        <script type="text/javascript">
+        	$(document).ready(function() {   
+        	  $(".imge").hide(); // 모든 이미지 감추기
+        	  $('.imge:first').fadeIn('slow');   // 첫번째 이미지 서서히 표시하기
+        	  
+        	  // TODO : 이미지를 클릭하면 순서대로 이미지 표시
+        	  $('.imge').hover(
+        	    function(){   
+        	    	$(this).fadeIn('slow');
+        	    }, 
+        	    function(){
+        	      var next = ($(this).next().length) ? $(this).next() :$('.imge:first'); 
+        	      $(this).fadeOut('slow');
+        	      next.fadeIn('slow');   
+        	    }
+        	  );
+        	});       
+        </script>
+  </head>
+<body>
+<a class="imge" href="http://example.com" ><img src="image1.jpg" width=300px height=300px></a>
+<a class="imge" href="http://example.com"><img src="image2.jpg" width=300px height=300px></a>
+<a class="imge" href="http://example.com"><img src="image3.jpg" width=300px height=300px></a>
+<a class="imge" href="http://example.com" ><img src="image4.jpg" width=300px height=300px></a>
+<a class="imge" href="http://example.com" ><img src="image5.jpg" width=300px height=300px></a>
+</body>

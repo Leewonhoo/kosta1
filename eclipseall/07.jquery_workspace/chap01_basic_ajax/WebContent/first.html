@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<TITLE> AJAX First </TITLE>
+
+<script language="javascript">
+<!--
+	//======= 1. XMLHttpRequest instance : Cross Browser
+	var xhr;
+	if(window.XMLHttpRequest) {
+		xhr = new XMLHttpRequest();
+		alert("window.XMLHttpRequest");
+	} else if(window.ActiveXObject) {
+		try {
+			xhr = new ActiveXObject("Msxml2.XMLHTTP");
+			alert("Msxml2.XMLHTTP");
+		} catch (e1) {
+			try {
+				xhr = new ActiveXObject("Mircorsoft.XMLHTTP");
+				alert("Mircorsoft.XMLHTTP");
+			} catch (e2) {
+				alert("AJAX가 지원되지 않는 브라우저입니다.");
+			}
+		}
+	} else {
+		alert("AJAX가 지원되지 않는 브라우저입니다."); 
+	}
+
+
+	//====== 2. 요청 전송
+	//2-1. 요청 연결 초기화
+	xhr.open('GET', 'hello.jsp', true);
+
+	//2-2. 콜백핸들러 할당 : 서버 응답상태 변경시 수행하는 함수
+	// readyState : 0, 1, 2, 3, 4(응답 전송 완료)
+	// status : 200 (요청에 대한 응답 성공)
+	xhr.onreadystatechange = parseCompletedReponse; 
+
+	//2-3. 요청 실행
+	xhr.send(null);			// GET 요청
+	//xhr.send('msg=hello');		// POST 요청 xhr,send('key=value&key=value')
+
+	//======= 3. response parshing
+	function parseCompletedReponse() {
+		window.status="요청 응답 상태 : " + xhr.readyState
+		if (xhr.readyState == 4) {
+			if (xhr.status == 200) {
+				// 요청 응답 성공 : 응답처리 수행
+				alert(xhr.responseText);
+			} else {
+				// 요청 응답 실패
+				alert('요청 오류 발생');
+			}
+		}  else {
+			window.status = '요청 처리중입니다. 요청 응답 상태 : ' + xhr.readyState;
+		}
+		window.status="";
+	}	
+
+//-->
+</script>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

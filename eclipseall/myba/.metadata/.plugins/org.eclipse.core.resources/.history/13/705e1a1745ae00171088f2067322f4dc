@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+				 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bmember">
+	
+	<resultMap id="bmemberResult" type="BMEMBER">
+		<result property="mId" column="m_id" />
+		<result property="mPw" column="m_pw" />
+		<result property="mName" column="m_name" />
+		<result property="mNick" column="m_nick" />
+		<result property="mBirth" column="m_birth" />
+		<result property="mPhone" column="m_phone" />
+		<result property="mMail" column="m_mail" />
+		<result property="mGender" column="m_gender" />
+		<result property="mAddress" column="m_address" />
+		<result property="mQuest" column="m_quest" />
+		<result property="mAnswer" column="m_answer" />
+	</resultMap>
+<!-- 
+	<select id="idCheck" parameterType="String" resultType="String">
+		SELECT M_ID
+		FROM BMEMBER
+		WHERE M_ID=#{mId}
+	</select>
+
+	<select id="nickCheck" parameterType="String" resultType="String">
+		SELECT M_NICK
+		FROM BMEMBER
+		WHERE M_NICK=#{mNick}
+	</select>-->
+	<!-- 
+	<select id="login" parameterType="String" resultType="bmemberResult">
+		SELECT m_id, m_pw, m_nick
+		FROM BMEMBER
+		WHERE m_id=#{mId}
+	</select>
+ -->	
+<!-- 
+	<select id="idSearch" parameterType="String" resultType="bmemberResult">
+	<![CDATA[
+		SELECT m_id, m_name, to_char(m_birth,'yyyyMMdd') as "m_birth", m_answer
+		FROM BMEMBER
+		WHERE m_name=#{mName}
+	]]>
+	</select>
+	
+	<select id="pwSearch" parameterType="String" resultType="bmemberResult">
+	<![CDATA[
+		SELECT m_id, m_pw, m_name, to_char(m_birth,'yyyyMMdd') as "m_birth", m_answer
+		FROM BMEMBER
+		WHERE m_id=#{mId}
+	]]>
+	</select>
+	
+	<select id="inforSelect" parameterType="hashmap" resultType="bmemberResult">
+	<![CDATA[
+		SELECT m_id, m_pw, m_name, m_name, m_nick, to_char(m_birth,'yyyyMMdd') as "m_birth", m_phone, m_mail, m_gender, m_address, m_answer
+		FROM BMEMBER
+		WHERE m_id=#{id} AND m_nick=#{nick}
+	]]>
+	</select>
+	
+	<insert id="bmeminsert" parameterType="bmember">
+		INSERT INTO BMEMBER
+		VALUES (#{mId},#{mPw},#{mName},#{mNick},#{mBirth},#{mPhone},#{mMail},#{mGender},#{mAddress},1,#{mAnswer})
+	</insert>
+
+	<update id="bmemupdate" parameterType="bmember">
+		UPDATE BMEMBER
+		SET m_pw=#{mPw},
+		m_nick=#{mNick},
+		m_birth=#{mBirth},
+		m_phone=#{mPhone},
+		m_mail=#{mMail},
+		m_gender=#{mGender},
+		m_address=#{mAddress},
+		m_answer=#{mAnswer}
+		WHERE m_id=#{mId}
+	</update>
+	
+	<delete id="bmemdelete" parameterType="String">
+		DELETE
+		FROM BMEMBER
+		WHERE m_id=#{mId}
+	</delete> -->
+	
+</mapper>

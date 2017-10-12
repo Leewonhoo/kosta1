@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+				 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bmember">
+	<resultMap id="bmemberResult" type="Bmember">
+		<result property="mId" column="m_id" />
+		<result property="mPw" column="m_pw" />
+		<result property="mName" column="m_name" />
+		<result property="mNick" column="m_nick" />
+		<result property="mBirth" column="m_birth" />
+		<result property="mPhone" column="m_phone" />
+		<result property="mMail" column="m_mail" />
+		<result property="mGender" column="m_gender" />
+		<result property="mAddress" column="m_address" />
+		<result property="mQuest" column="m_quest" />
+		<result property="mAnswer" column="m_answer" />
+	</resultMap>
+
+	<!-- 로그인(아이디, 암호) : 사용자 닉네임 반환 -->
+	<select id="loginCheck" parameterType="hashmap" resultType="String">
+		SELECT m_nick
+		FROM BMEMBER
+		WHERE m_id=#{id} and m_pw=#{pw}
+	</select>
+	
+	<!-- 아이디 확인 -->
+	<select id="idCheck" parameterType="String" resultType="String">
+		SELECT m_id
+		FROM BMEMBER
+		WHERE m_id=#{id}
+	</select>
+	
+	<!-- 닉네임 확인 -->
+	<select id="nickCheck" parameterType="String" resultType="String">
+		SELECT m_nick
+		FROM BMEMBER
+		WHERE m_nick=#{nick}
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="memberJoin" parameterType="Bmember">
+	<![CDATA[
+		INSERT INTO BMEMBER VALUES (?,?,?,?,?,?,?,?,?,1,?)
+	]]>
+	</insert>
+	
+</mapper>

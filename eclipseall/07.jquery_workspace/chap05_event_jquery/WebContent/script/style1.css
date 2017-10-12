@@ -1,0 +1,25 @@
+.buttons{
+width: 100px; 
+text-align: center; 
+margin: 5px; 
+border: 2px solid;
+font-weight:bold;
+}
+
+.dbuttons{
+width: 100px; 
+text-align: center; 
+margin: 5px; 
+border: 2px solid;
+font-weight:bold;
+color:blue;
+}
+
+.setDisabled{
+width: 100px; 
+text-align: center; 
+margin: 5px; 
+border: 2px solid;
+font-weight:bold;
+color:gray;	
+}

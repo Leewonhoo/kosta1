@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+				 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="blog">
+	
+	<resultMap id="blogResult" type="blog">
+		<result property="blogId" column="l_id" />
+		<result property="blogStart" column="l_start" />
+		<result property="blogEnd" column="l_end" />
+		<result property="blogStatus" column="l_status" />
+		<result property="blogIp" column="l_ip" />
+	</resultMap>
+
+	<insert id="blogInsert" parameterType="String">
+		INSERT INTO blogin (l_id, l_start, l_status, l_ip)
+		VALUES (#{blogId},sysdate,'R','192.168.0.1')
+	</insert>
+
+	<update id="blogUpdate" parameterType="blog">
+		UPDATE blogin
+		SET l_end=sysdate, l_status=#{blogStatus}
+		WHERE l_id=#{blogId} AND l_end IS NULL
+	</update>
+	
+</mapper>

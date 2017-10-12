@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="script/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("button").click(function() {
+			$("#test").hide();
+			//$(".test").hide();			
+		});
+	});
+</script>
+</head>
+<body>
+<center>단락 삭제 기능 확인하기</center>
+<h2 id="test">첫번째 단락입니다</h2>
+<p class="test">두번째 단락입니다</p>
+<p>class라는 css 기법을 적용하지 않은 단락입니다</p>
+<button type="button">Click me</button>
+</body>
+</html>
+<!--?  실행후 id값이 test일 경우 삭제되는 동일한 로직으로 수정해 보세요
+	id는 각 tag를 구분하기 위해 유일하게 활용하는 속성-->

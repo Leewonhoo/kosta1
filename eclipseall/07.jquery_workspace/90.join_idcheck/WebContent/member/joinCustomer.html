@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<link type="text/css" rel="stylesheet" href="../css/my.css">
+<script type="text/javascript" src="join.js"></script>
+<title>고객관리시스템</title>
+</head>
+<body>
+<table border="1" width="990px" height="610px">
+
+<!-- body content menu -->
+<tr height="500px">
+	<td align="center">
+		<!-- 회원가입 form -->
+		<FORM ACTION="#" METHOD="POST" name="joinForm">
+		<table border="1" cellpadding="3" cellspacing="0" class="style1">
+			<tr>
+				<td colspan="3">
+					<span style="font-weight:bold;">회원가입</span>&nbsp;&nbsp;&nbsp;
+					<span style="color:red;font-size:11px;">&nbsp;*&nbsp;[필수입력항목]</span>
+				</td>
+			</tr>
+			
+			<!-- 아이디 -->
+			<tr>
+				<TD align="right" >
+					<span style="color:red;">&nbsp;*&nbsp;</span>아이디:</TD>
+				<td colspan="2" align="left">
+					<INPUT class="text150Required" NAME="userid" TYPE="TEXT" SIZE="20" MAXLENGTH="8"  class="field">
+				</td>
+			</tr>
+			<!-- 암호 -->
+			<tr>
+				<td align="right">
+					<span style="color:red;">&nbsp;*&nbsp;</span>암호:
+				</td>
+				<td colspan="2" align="left">
+					<INPUT class="text150Required" NAME="userpw" TYPE="text" SIZE="20" MAXLENGTH="8" class="field">
+					&nbsp;&nbsp;&nbsp;|&nbsp;
+					암호확인:
+					&nbsp;&nbsp;
+					<INPUT class="text150Required" NAME="userpw2" TYPE="text" SIZE="20"
+								MAXLENGTH="8" class="field"
+								onKeyUP="mappingUserpw()"
+								onBlur="mappingUserpwCheck()"
+								onFocus="mappingUserpw()">
+					&nbsp;&nbsp;
+					<span id="displayUserpw" style="color:navy;">암호확인메세지</span>
+				</td>
+			</tr>
+			<!-- 이름 -->
+			<tr>
+				<td align="right">
+					<span style="color:red;">&nbsp;*&nbsp;</span>이름:
+				</td>
+				<td colspan="2" align="left">
+					<INPUT class="text150Required" NAME="username" TYPE="TEXT" SIZE="20" MAXLENGTH="10" class="field">
+				</td>
+			</tr>
+			<!-- 전화번호 -->
+			<tr>
+				<td align="right">
+					<span style="color:red;">&nbsp;*&nbsp;</span>전화번호:
+				</td>
+				<td colspan="2" align="left">
+					<SELECT class="text70" name="phone1" SIZE="1" style="width:70px;">
+						<OPTION VALUE="010">010</OPTION>
+						<OPTION VALUE="011">011</OPTION>
+						<OPTION VALUE="016">016</OPTION>
+						<OPTION VALUE="017">017</OPTION>
+						<OPTION VALUE="017">019</OPTION>
+					</SELECT>&nbsp;&nbsp;
+					<B>-</B>&nbsp;
+					<INPUT class="text70" NAME="phone2" TYPE="TEXT" SIZE="8" MAXLENGTH="4" >&nbsp;
+					<B>-</B>&nbsp;
+					<INPUT class="text70" NAME="phone3" TYPE="TEXT" SIZE="8" MAXLENGTH="4" >
+				</td>
+			</tr>
+			<!-- 이메일 -->
+			<tr>
+				<td align="right" >
+					<span style="color:red;">&nbsp;*&nbsp;</span>이메일:
+				</td>
+				<td colspan="2" align="left">
+					<INPUT class="text100" NAME="email1" TYPE="TEXT" class="field2">&nbsp;@&nbsp;
+					<INPUT class="text100" NAME="email2" TYPE="TEXT" class="field2">&nbsp;
+					<select class="text150" name="emailSelect" onChange="displayEmail(this.value)">
+						<option value="">==선택==</option>
+						<option value="naver.com">네이버</option>
+						<option value="nate.com">네이트</option>
+						<option value="yahoo.com">야후</option>
+						<option value="dreamwiz.com">드림위즈</option>
+						<option value="">직접입력</option>
+					</select>
+				</td>
+			</tr>
+
+			<!-- 관심분야 -->
+			<!-- 이름 -->
+			<tr>
+				<td align="right">
+					<span style="color:red;">&nbsp;*&nbsp;</span>관심분야:</td>
+				<td colspan="2" align="left">
+					<input name="interestAll" type="checkbox" value="all" onClick="interestAllChecked()">&nbsp;|&nbsp;
+
+					<input name="interest" type="checkbox" value="Programming">&nbsp;Programming&nbsp;&nbsp;
+					<input name="interest" type="checkbox" value="DataBase">&nbsp;DataBase&nbsp;&nbsp;
+					<input name="interest" type="checkbox" value="OOAD">&nbsp;OOAD&nbsp;&nbsp;
+					<input name="interest" type="checkbox" value="Network">&nbsp;Network&nbsp;&nbsp;
+					<p>
+					<!-- 
+					<input onClick="allChecked()" type="button" value="전체선택">&nbsp;
+					<input onClick="reverseChecked()" type="button" value="반전선택">&nbsp;
+					<input onClick="allUnChecked()" type="button" value="전체해제">&nbsp;
+					-->
+
+					<!-- interestChecked(takeFlag) -->
+					<input onClick="interestChecked(true)" type="button" value="전체선택">&nbsp;
+					<input onClick="reverseChecked()" type="button" value="반전선택">&nbsp;
+					<input onClick="interestChecked(false)" type="button" value="전체해제">&nbsp;
+
+				</td>
+			</tr>
+
+			<!-- 자기소개 -->
+			<tr>
+				<td align="right">자기소개:</td>
+				<td colspan="2" align="left">
+					<textarea name="myIntro" rows="5" cols="50" onKeyUp="myIntroMaxLength(10)"></textarea>
+					&nbsp;<span id="myIntroLength">0</span>&nbsp;/&nbsp;10자이내</br>
+
+				</td>
+			</tr>
+
+			<!-- 전송 , 취소 -->
+			<tr>
+				<td colspan="3" align="center">
+					<INPUT onClick="confirmData()" TYPE="SUBMIT" VALUE="가입하기" class="btnok">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<INPUT TYPE="RESET" VALUE="취      소" class="btncancel">
+				</td>
+			</tr>
+
+		</table>
+		</FORM>		
+	</td>
+</tr>
+
+
+</table>
+</body>
+</html>

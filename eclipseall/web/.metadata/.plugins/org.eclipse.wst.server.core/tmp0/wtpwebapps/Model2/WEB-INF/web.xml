@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Model2</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <description></description>
+    <display-name>ModelServlet</display-name>
+    <servlet-name>KorModelServlet</servlet-name>
+    <servlet-class>work.controller.ModelServlet</servlet-class>
+    <init-param>
+    	<!-- 변수명 --><!-- 값 -->
+    	<param-name>webname</param-name>
+    	<param-value>코스타</param-value>
+    </init-param>
+    <init-param>
+    <param-name>webage</param-name>
+    	<param-value>25</param-value>
+    </init-param>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>KorModelServlet</servlet-name>
+    <url-pattern>/controller</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 다중의 인스턴스 설정을 통한 초기화 설정 -->
+  <servlet>
+    <description></description>
+    <display-name>ModelServlet</display-name>
+    <servlet-name>EngModelServlet</servlet-name>
+    <servlet-class>work.controller.ModelServlet</servlet-class>
+    <init-param>
+    	<!-- 변수명 --><!-- 값 -->
+    	<param-name>webname</param-name>
+    	<param-value>kosta</param-value>
+    </init-param>
+    <init-param>
+    <param-name>webage</param-name>
+    	<param-value>25</param-value>
+    </init-param>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>EngModelServlet</servlet-name>
+    <url-pattern>/Eng/controller</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- code단위 error config 설정 -->
+  <error-page>
+  	<error-code>404</error-code><location>/404.jsp</location>
+  </error-page>
+  <!-- exception class단위 error config 설정 -->
+  <error-page>
+  	<exception-type>java.lang.ArithmeticException</exception-type>
+  	<location>/Arithmetic.jsp</location>
+  </error-page>
+  <error-page>
+  	<exception-type>java.lang.NullPointerException</exception-type>
+  	<location>/common.jsp</location>
+  </error-page>
+  
+</web-app>

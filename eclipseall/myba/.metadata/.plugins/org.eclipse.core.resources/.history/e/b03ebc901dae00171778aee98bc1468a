@@ -1,0 +1,25 @@
+bmember.idCheck=SELECT M_ID FROM BMEMBER WHERE M_ID=?
+bmember.nickCheck=SELECT M_NICK FROM BMEMBER WHERE M_NICK=?
+bmember.login=SELECT m_id, m_pw, m_nick FROM BMEMBER WHERE m_id=?
+bmember.idSearch=SELECT m_id, m_name, to_char(m_birth,'yyyyMMdd')\"m_birth\", m_answer FROM BMEMBER WHERE m_name=?
+bmember.pwSearch=SELECT m_id, m_pw, m_name, to_char(m_birth,'yyyyMMdd')\"m_birth\", m_answer FROM BMEMBER WHERE m_id=?
+bmember.inforSelect=SELECT m_id, m_pw, m_name, m_name, m_nick, to_char(m_birth,'yyyyMMdd')\"m_birth\", m_phone, m_mail, m_gender, m_address, m_answer FROM BMEMBER WHERE m_id=? AND m_nick=?
+bmember.insert=INSERT INTO BMEMBER VALUES (?,?,?,?,?,?,?,?,?,1,?)
+bmember.update=UPDATE BMEMBER SET m_pw=?, m_nick=?, m_birth=?, m_phone=?, m_mail=?, m_gender=?, m_address=?, m_answer=? WHERE m_id=?
+bmember.delete=DELETE FROM BMEMBER WHERE m_id=?
+
+bboard.numCheck=SELECT b_num FROM BBOARD WHERE B_NUM=?
+bboard.nickCheck=SELECT B_NICK FROM BBOARD WHERE B_NICK=? AND B_NUM=?
+bboard.insert=INSERT INTO BBOARD(B_ID, B_NICK, B_PW, B_TITLE, B_MEMO, B_TIME, B_TAG, B_NUM) VALUES (?,?,?,?,?,sysdate,?,bbor_seq.nextval)
+bboard.nickUpdate=UPDATE BBOARD SET b_nick=? WHERE b_id=?
+bboard.delete=DELETE FROM BBOARD WHERE b_nick=? AND b_pw=? AND b_num=?
+bboard.visit=SELECT b_visit FROM bboard WHERE b_num=?
+bboard.visiteUpdate=UPDATE bboard SET b_visit=? WHERE b_num=?
+bboard.board1=(SELECT * FROM BBOARD ORDER BY b_num DESC)
+bboard.board2=SELECT rownum, b_nick, b_num, b_title, to_char(b_time,'yyyy.MM.dd')\"b_time\", b_visit FROM "+sql1+" WHERE rownum <= ?
+
+bboard.myboard1=(SELECT * FROM BBOARD WHERE b_nick=? ORDER BY b_num DESC)
+bboard.myboard2=
+
+blog.insert=INSERT INTO blogin(l_id, l_start, l_status, l_ip) VALUES (?,sysdate,'R','192.168.0.1')
+blog.update=UPDATE blogin SET l_end=sysdate, l_status=? WHERE l_id=? AND l_end IS NULL

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+				 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bboard">
+	
+	<resultMap id="bboardResult" type="BBOARD">
+		<result property="bborId" column="b_id" />
+		<result property="bborNick" column="b_nick" />
+		<result property="bborPw" column="b_pw" />
+		<result property="bborNum" column="b_num" />
+		<result property="bborTitle" column="b_title" />
+		<result property="bborMemo" column="b_memo" />
+		<result property="bborTime" column="b_time" />
+		<result property="bborVisit" column="b_visit" />
+		<result property="bborTag" column="b_tag" />
+	</resultMap>
+	
+	<select id="bbornumCheck" parameterType="int" resultType="String">
+		SELECT b_num
+		FROM BBOARD
+		WHERE B_NUM=#{number}
+	</select>
+	
+	<select id="bbornickCheck" parameterType="hashmap" resultType="String">
+		SELECT B_NICK
+		FROM BBOARD
+		WHERE B_NICK=#{nick} AND B_NUM=#{number}
+	</select>
+
+	<insert id="bborinsert" parameterType="bboard">
+		INSERT INTO BBOARD(B_ID, B_NICK, B_PW, B_TITLE, B_MEMO, B_TIME, B_TAG, B_NUM)
+		VALUES (#{bborId},#{bborNick},#{bborPw},#{bborTitle},#{bborMemo},sysdate,#{bborTag},bbor_seq.nextval)
+	</insert>
+	
+	<update id="bborNickUpdate" parameterType="hashmap">
+		UPDATE BBOARD
+		SET b_nick=#{nick}
+		WHERE b_id=#{id}
+	</update>
+	
+	<delete id="bbordelete" parameterType="hashmap">
+		DELETE FROM BBOARD
+		WHERE b_nick=#{nick} AND b_pw=#{pw} AND b_num=#{number}
+	</delete>
+	
+	<select id="bborvisit" parameterType="String" resultType="int">
+		SELECT b_visit
+		FROM bboard
+		WHERE b_num=#{bborNum}
+	</select>
+	
+	<update id="bborVisitUpdate" parameterType="int">
+		UPDATE bboard SET b_visit=b_visit+1
+		WHERE b_num=#{number}
+	</update>
+	
+	<select id="bborboard" parameterType="int" resultMap="hashmap" >
+	<![CDATA[
+		SELECT rownum, b_nick, b_num, b_title, to_char(b_time,'yyyy.MM.dd')\"b_time\", b_visit
+		FROM (SELECT * FROM BBOARD ORDER BY b_num DESC)
+		WHERE rownum <= #{rownum}
+	]]>
+	</select>
+
+	<select id="bbormyboard" parameter="hashmap" resultMap="hashmap">
+	<![CDATA[
+		SELECT rownum, b_nick, b_num, b_title, to_char(b_time,'yyyy.MM.dd')\"b_time\", b_visit
+		FROM (SELECT * FROM BBOARD WHERE b_nick=#{nick} ORDER BY b_num DESC)
+		WHERE rownum <= #{rownum}
+	]]>
+	</select>
+	
+	<select id="bborlastNum" resultMap="int">
+		SELECT b_num FROM BBOARD ORDER BY b_num DESC
+	</select>
+	
+	<select id="bbordetail" parameterType="String" resultMap="bboardResult">
+		SELECT b_nick, b_title, b_memo, to_char(b_time,'yyyy.MM.dd')\"b_time\", b_visit, b_tag
+		FROM bboard
+		WHERE b_num=#{number}
+	</select>
+	
+	
+</mapper>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>JQuery Examples</title>
+        <style type="text/css">
+        	.hover { background-color: #00f; color: #fff; }
+        </style>
+        <script src="script/jquery-1.7.1.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+	        $(document).ready(function() {   
+	        	  $('th').hover(
+	        	    function(){   
+	        	      var colindex=$(this).parent().children().index(this);
+	        	      $(this).addClass('hover');
+	        	      $('table td:nth-child('+(colindex+1)+')').addClass('hover');
+	        	    }, 
+	        	    function(){   
+	        	      $('table tr').children().removeClass('hover');
+	        	    }
+	        	  );   
+
+				 // 선택한 열만 남기고 다른 모든 열 감추기 : 
+				 // - colindex는 0번부터 시작
+       	 		/*
+	        	  $('th').click(function(){   
+		        	// 선택한 컬럼의 인덱스번호  : 테이블 컬럼 인덱스번호는 0번부터시작
+	        	    colindex=$(this).parent().children().index(this);
+	        	    
+	        	    // 전체 컬럼갯수
+					countindex = $(this).parent().children().length;
+					//alert("countindex : " + countindex);
+	        	    //alert("colindex : " + colindex);
+					
+	        	    // 선택한 컬럼의 인덱스는 0번부터 시작이고
+	        	    // nth-child 함수의 인덱스는 1번부터 시작이므로 
+	        	    // 선택한 컬럼인덱스 + 1을 해야지만 nth-child에서 
+	        	    // 원하는 컬럼의 인덱스를 올바르게 지정가능 
+	        	    $('table th:not(:nth-child('+(colindex+1)+'))').hide();
+	        	    $('table td:not(:nth-child('+(colindex+1)+'))').hide();
+	        	  });
+			 	*/
+
+				 // 선택한 열만 삭제하고, 다른 모든 열은 보여주기
+	        	  $('th').click(function(){   
+	        	    colindex=$(this).parent().children().index(this);
+	        	    $('table th:not(:nth-child('+(colindex)+'))').hide();
+	        	    $('table td:not(:nth-child('+(colindex)+'))').hide();	
+	        	    				 	
+	        	    $('table th:not(:nth-child('+(colindex+1)+'))').show();
+	        	    $('table td:not(:nth-child('+(colindex+1)+'))').show();
+	        	});    
+		        	   
+	    	});  
+        </script>
+  </head>
+<body>
+<table border="1">
+<thead>
+<tr><th>Roll</th><th>Name</th><th>Marks</th></tr>
+</thead>
+<tbody>
+<tr><td>101</td><td>John</td><td>87</td></tr>
+<tr><td>102</td><td>Naman</td><td>90</td></tr>
+<tr><td>103</td><td>Chirag</td><td>85</td></tr>
+</tbody>
+</table>
+</body>

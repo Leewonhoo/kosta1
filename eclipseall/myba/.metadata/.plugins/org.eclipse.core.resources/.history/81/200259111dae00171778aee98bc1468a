@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+				 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bboard">
+	
+	<resultMap id="bboardResult" type="bboard">
+		<result property="bborId" column="b_id" />
+		<result property="bborNick" column="b_nick" />
+		<result property="bborPw" column="b_pw" />
+		<result property="bborNum" column="b_num" />
+		<result property="bborTitle" column="b_title" />
+		<result property="bborMemo" column="b_memo" />
+		<result property="bborTime" column="b_time" />
+		<result property="bborVisit" column="b_visit" />
+		<result property="bborTag" column="b_tag" />
+	</resultMap>
+	
+	<select id="numCheck" parameterType="bboard" resultType="String">
+		<bind name="number" value="_Bboard.getbNum()"/>
+		SELECT b_num
+		FROM BBOARD
+		WHERE B_NUM=#{number}
+	</select>
+	
+	<select id="nickCheck" parameterType="bboard" resultType="String">
+		<bind name="number" value="_Bboard.getbNick()"/>
+		<bind name="nick" value="_Bboard.getbNum()"/>
+		SELECT B_NICK
+		FROM BBOARD
+		WHERE B_NICK=#{nick} AND B_NUM=#{number}
+	</select>
+
+	<insert id="bborinsert" parameterType="bboard">
+		INSERT INTO BBOARD(B_ID, B_NICK, B_PW, B_TITLE, B_MEMO, B_TIME, B_TAG, B_NUM)
+		VALUES (#{bborId},#{bborNick},#{bborPw},#{bborTitle},#{bborMemo},sysdate,#{bborTag},bbor_seq.nextval)
+	</insert>
+	
+	<update id="bborNickUpdate" parameterType="bboard">
+		UPDATE BBOARD
+		SET b_nick=#{bborNick}
+		WHERE b_id=#{bborId}
+	</update>
+	
+	<delete id="bbordelete" parameterType="bboard">
+		DELETE FROM BBOARD
+		WHERE b_nick=#{bborNick} AND b_pw=#{bborPw} AND b_num=#{bborNum}
+	</delete>
+	
+	<select id="bborvisit" parameterType="String" resultType="int">
+		SELECT b_visit
+		FROM bboard
+		WHERE b_num=#{bborNum}
+	</select>
+	
+	<update id="bborVisitUpdate" parameterType="bboard">
+		UPDATE bboard SET b_visit=#{bborVisit}
+		WHERE b_num=#{bborNum}
+	</update>
+
+	
+	<select id="login" parameterType="String" resultType="bmemberResult">
+		SELECT m_id, m_pw, m_nick
+		FROM BMEMBER
+		WHERE m_id=#{bmemId}
+	</select>
+
+	<select id="idSearch" parameterType="String" resultType="bmemberResult">
+		SELECT m_id, m_name, to_char(m_birth,'yyyyMMdd')\"m_birth\", m_answer
+		FROM BMEMBER
+		WHERE m_name=#{bmemName}
+	</select>
+	
+	<select id="pwSearch" parameterType="String" resultType="bmemberResult">
+		SELECT m_id, m_pw, m_name, to_char(m_birth,'yyyyMMdd')\"m_birth\", m_answer
+		FROM BMEMBER
+		WHERE m_id=#{bmemId}
+	</select>
+	
+	<select id="inforSelect" parameterType="hashmap" resultType="bmemberResult">
+		SELECT m_id, m_pw, m_name, m_name, m_nick, to_char(m_birth,'yyyyMMdd')\"m_birth\", m_phone, m_mail, m_gender, m_address, m_answer
+		FROM BMEMBER
+		WHERE m_id=#{bmemId} AND m_nick=#{bmemNick}
+	</select>
+	
+	
+	<insert id="bmeminsert" parameterType="bmember">
+		INSERT INTO BMEMBER
+		VALUES (#{bmemId},#{bmemPw},#{bmemName},#{bmemNick},#{bmemBirth},#{bmemPhone},#{bmemMail},#{bmemGender},#{bmemAddress},1,#{bmemAnswer})
+	</insert>
+
+	<update id="bmemupdate" parameterType="bmember">
+		UPDATE BMEMBER
+		SET m_pw=#{bmemPw},
+		m_nick=#{bmemNick},
+		m_birth=#{bmemBirth},
+		m_phone=#{bmemPhone},
+		m_mail=#{bmemMail},
+		m_gender=#{bmemGender},
+		m_address=#{bmemAddress},
+		m_answer=#{bmemAnswer}
+		WHERE m_id=#{bmemId}
+	</update>
+	
+	<delete id="bmemdelete" parameterType="String">
+		DELETE
+		FROM BMEMBER
+		WHERE m_id=#{bmemId}
+	</delete>
+	
+</mapper>

@@ -1,0 +1,48 @@
+<!--
+
+-->
+<html>
+<head>
+<title>XML DOM 생성 방벙</title>
+<script>
+	window.onload = function() {
+		// XML 데이터 생성
+		var data = "<book>\r\n";
+		data += "<title>Ajax 프로그래밍</title>\r\n";
+		data += "<author>홍길동</author>\r\n";
+		data += "<price>35000</price>\r\n";
+		data += "</book>";
+
+		var xmlDom = getXmlDom(data);
+		var root = xmlDom.documentElement;
+		alert(xmlDom);
+	}
+
+	function getXmlDom(xmlData) {
+		var xmlDoc;
+		if (window.DOMParser) {	// Firefox 계열 브라우저 DOM 생성
+			var parser = new DOMParser();
+			xmlDoc = parser.parseFromString(xmlData, "text/xml");
+			alert("window.DOMParser");
+			return xmlDoc;
+
+		} else if(window.ActiveXObject) {	 // IE XML DOM 생성
+			xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+			xmlDoc.async = "false";
+			xmlDoc.loadXML(xmlData);
+			alert("window.DOMParser");
+			return xmlDoc;
+
+		} else {
+			alert("XML 문자열 데이터로 부터 XML DOM을 생성할 수 없습니다.");
+			return null;
+		}
+	}
+
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

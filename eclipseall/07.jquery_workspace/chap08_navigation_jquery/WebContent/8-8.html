@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>JQuery Examples</title>
+<style type="text/css">
+	.menus{
+		width: 200px;
+		padding:5px;
+		margin:1px;
+		font-weight:bold;
+		background-color: #0ff;
+	}
+
+	.menuitems{display:none;}
+
+	a{
+	  display:block;
+	  border-bottom: 1px solid #fff; 
+	  text-decoration: none;
+	  background: #00f;
+	  color: #fff;	
+	  padding:10px;
+	  font-weight:bold;
+	  width: 190px;
+	}
+
+	.menuitems a:hover {background: #000;}
+	li {display:inline;}
+	ul{display:inline;}
+</style>
+<script src="script/jquery-1.7.1.js" type="text/javascript"></script>  
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('p.menus').mouseout(function(){
+			$("div.menuitems'").slideUp("slow");    
+			$('p').css({backgroundImage:""});
+	});
+
+	$('p.menus').mouseover(function(){
+		$(this).css({'background-image':"url(down.png)", 'background-repeat':"no-repeat", 
+		'background-position':"right"}).next("div.menuitems").slideDown(500)
+		.siblings("div.menuitems").slideUp("slow");
+		$(this).siblings().css({backgroundImage:""});
+		});
+	});
+</script>
+  </head>
+<body>
+  <p class="menus">Books</p>
+    <div class="menuitems">
+	 <ul>
+	  <li><a href="example.com">Web Development</a></li>
+	  <li><a href="example.com">Programming</a></li>
+	  <li><a href="example.com">RDBMS</a></li>
+	 </ul>
+    </div>
+  <p class="menus">Movies</p>
+    <div class="menuitems">
+	 <ul>
+	  <li><a href="example.com">Latest Movie Trailers</a></li>
+	  <li><a href="example.com">Movie Reviews</a></li>
+	  <li><a href="example.com">Celebrity Interviews</a></li>
+	 </ul>
+    </div>
+</body>

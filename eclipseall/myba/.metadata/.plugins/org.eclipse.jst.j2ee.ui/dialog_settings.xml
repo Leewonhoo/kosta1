@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="J2EE_IMPORT_null">
+		<item value="I:\ho\eclipseall\myba\FlyPeanut.war"/>
+	</list>
+	<list key="J2EE_IMPORT_EJB">
+		<item value="I:\ho\eclipseall\myba\lunch.jar"/>
+	</list>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="NULL_RUNTIME"/>
+		<item value="Apache Tomcat v8.5"/>
+	</list>
+</section>

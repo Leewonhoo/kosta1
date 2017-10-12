@@ -1,0 +1,13 @@
+INDEX VERSION 1.126
+C:\practice\workspace\07.jquery_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3487468928.index
+\chap04_3jquery_step1\src
+C:\practice\workspace\07.jquery_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2343326138.index
+\01.dom_js\src
+C:\practice\workspace\07.jquery_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\471205248.index
+\chap10_ajax_jquery\src
+C:\practice\workspace\07.jquery_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1622057389.index
+\chap02_step2Xml\src
+C:\practice\workspace\07.jquery_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3959795712.index
+\chap02_step2JSON\src
+C:\practice\workspace\07.jquery_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2228474512.index
+\chap01_02_basic\src

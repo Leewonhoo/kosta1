@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>JQuery Examples</title>
+        <style type="text/css">
+        	.hover { background-color: #00f; color: #fff; }
+        </style>
+        <script src="script/jquery-1.7.1.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+	        // :eq(indexNo) => 0부터 시작, 해당인덱스의 단일 엘리먼트 반환
+	        // :nth-child(indexNo) => 1부터 시작, 각부모의 지정한 인덱스의 모든 자식 엘리먼트를 반환
+	        // 즉, td의 부모인 tr의 자식들중에서 홀수(odd) 열에 스타일적용
+	        $(document).ready(function() {   
+	        	//$('td:nth-child(odd)').addClass('hover');
+	  			
+	        	// TODO1: 테이블 제목의 홀수열(odd) / 짝수열(even) 에 적용해보세요
+	        	//$('th:nth-child(even)').addClass('hover');
+	        	//$('tr th:nth-child(1)').addClass('hover');
+	        	//$('tr th:nth-child(4)').addClass('hover');
+	        	
+	        	// TODO2: 테이블 제목행의 적용해보세요
+	        	$('thead:first-child').css({'background-color':'#0f3', 'color': '#fff;'});
+	  			
+	        	// TODO3: 테이블 BODY의 짝수행에 적용해보세요. 
+	        	$('tbody tr:nth-child(1)').addClass('hover');
+	        });
+
+	    </script>
+  </head>
+<body>
+<table border="1">
+<thead>
+<tr><th>Roll</th><th>Name</th><th>Marks</th><th>Rank</th></tr>
+</thead>
+<tbody>
+<tr><td>101</td><td>John</td><td>87</td><td>3</td></tr>
+<tr><td>102</td><td>Naman</td><td>90</td><td>2</td></tr>
+<tr><td>103</td><td>Chirag</td><td>85</td><td>4</td></tr>
+<tr><td>104</td><td>David</td><td>92</td><td>1</td></tr>
+<tr><td>105</td><td>Kelly</td><td>81</td><td>5</td></tr>
+</tbody>
+</table>
+</body>
